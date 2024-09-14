@@ -1,15 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-     const images = document.querySelectorAll("img");
+    const images = document.querySelectorAll("img");
 
-     for(const image of images){
-         fetch("https://dog.ceo/api/breeds/image/random")
-         .then(response => response.json())
-         .then(data => {
-            image.scr = data.message
-            image.width = 100;
-            image.height = 100;
-        })
-    }
+    for(const image of images){
+        fetch("https://api.edamam.com/search?q=${recipe_name}&app_id=${app_id}&app_key=${app_key}")
+        .then(response => response.json())
+        .then(data => {
+           image.scr = data.message
+           image.width = 50;
+           image.height = 50;
+       })
+   }
 })
